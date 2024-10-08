@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "chokidar": "^4.0.1",
+    "express": "^4.21.0",
+    "jsdom": "^25.0.1",
+    "socket.io": "^4.8.0"
+  }
+}
