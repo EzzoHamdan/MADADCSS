@@ -180,11 +180,14 @@ const preprocessHtml = (filePath) => {
             dynamicHTML = compiledHTML;
             console.log(`${filePath} updated successfully.`);
             console.timeEnd('preprocessHtml');
+        } else {
+            console.error(`Failed to preprocess HTML for ${filePath}`);
         }
 
         isWriting = false;
     });
 };
+
 
 fs.watch('core.mess', (eventType, filename) => {
     if (eventType === 'change' && !isProcessingMess) {
