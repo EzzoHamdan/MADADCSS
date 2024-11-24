@@ -13,6 +13,7 @@ class SimpleCSSPreprocessor {
     constructor(fetchFile = 'static.css') {
         this.fetchFile = fetchFile;
         this.cache = {};
+        this.replacedClasses = new Set();  // Keep track of replaced classes
     }
 
     preprocess(code, fileType) {
@@ -59,15 +60,27 @@ class SimpleCSSPreprocessor {
 
         elements.forEach(element => {
             const classNames = element.className.split(' ');
+            let stylesApplied = false;
+
+            // Iterate through class names and apply styles if necessary
             classNames.forEach(className => {
                 if (className.includes('[') || className.includes(']')) {
                     const includedCode = this.includeClass(className.trim());
                     if (includedCode) {
+                        // Apply the included code as inline style
                         element.setAttribute('style', element.style.cssText + includedCode);
+                        stylesApplied = true;
+                        this.replacedClasses.add(className);  // Mark class as replaced
                     }
                 }
             });
+
+            // Remove class names that have been replaced with inline styles
+            if (stylesApplied) {
+                element.className = classNames.filter(className => !this.replacedClasses.has(className)).join(' ');
+            }
         });
+
         return dom.serialize();
     }
 
