@@ -1,0 +1,19 @@
+{
+  "name": "madadcss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "chokidar": "^4.0.1",
+    "express": "^4.21.1",
+    "jsdom": "^25.0.1",
+    "socket.io": "^4.8.1"
+  }
+}

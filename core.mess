@@ -1,0 +1,51 @@
+body {
+
+    fetchClass: bg-color-[#222], text-color-[#fff], p-[20px] m-0;
+
+}
+
+h1 {
+ 
+    fetchClass: text-center, fs-[2.25rem,2rem], text-color-[#fff];
+
+
+}
+form {
+
+    fetchClass: max-w-[400px], m-0, m-auto, bg-color-[#333], p-[20px], radius-[10px];
+    
+label {
+    
+        fetchClass: block, mb-[10px], fs-lg;
+
+}
+
+
+input[type="text"],
+input[type="email"],
+textarea { 
+
+    fetchClass: w-full; py-[10px, 10px], mb-[20px], border-none, radius-[5px], bg-color-[#444], text-color-[#fff];
+
+        }
+
+}
+
+
+textarea{
+
+    fetchClass: h-[100px];
+
+}
+
+input[type="submit"]{
+
+    fetchClass: bg-color-[#ff0], text-color-[#222], border-none, p-[10px 20px], fs-lg, radius-[5px];
+
+}
+
+input[type="submit"]:hover {
+
+    fetchClass: bg-color-[#ffc107];
+
+}
